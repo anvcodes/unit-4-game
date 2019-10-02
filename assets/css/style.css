@@ -15,8 +15,7 @@ p{
     color: yellow;
 }
 
-#y0da{
-    margin-right: 32px;
-    margin-left: 2px;
-    
+.characters{
+    float: left;
+    position: relative;
 }
