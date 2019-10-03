@@ -1,5 +1,5 @@
 body{
-    background-image: url(https://cdn57.androidauthority.net/wp-content/uploads/2016/11/star-wars-galaxy-of-heroes-840x400.jpg);
+    background-image: url(https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
 
 }
 
@@ -10,12 +10,42 @@ header{
     
 }
 
-p{
-  
-    color: yellow;
-}
 
 .characters{
     float: left;
     position: relative;
 }
+
+button{
+    width: 70px;
+    height: 70px;
+}
+
+.randomNumber{
+    width: 100px;
+    height: 100px;
+    background-color: chartreuse;
+    margin-top: 50px;
+}
+
+#wins{
+    background-color: blueviolet;
+    margin-left: 10%;
+    width: 100px;
+    height:50px;
+}
+
+#losses{
+    background-color: blueviolet;
+    margin-left: 10%;
+    width: 100px;
+    height:50px;
+}
+
+.container{
+    margin-left: 2%;
+    margin-right: 3%;
+    background-color: darkslategrey;
+    color: whitesmoke;
+}
+

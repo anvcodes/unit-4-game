@@ -9,71 +9,105 @@
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
     <title>Document</title>
 </head>
 <header>Crystal Game</header>
 
 <body>
-        <div>
+        <div class="container">
                 <h1>Instructions</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio fugiat rem eaque animi, odit, quam beatae magnam magni voluptates laboriosam corrupti molestiae delectus obcaecati? Vero ex pariatur explicabo cum cupiditate.
+                        The objctive of this game is add the values of the crystals by clicking on them(the values will be hidden) and achieve a sum equal to the random number generated.
+                        If your number exceeds the randomly generated number 
+                        you lost the game. If you lose your loss tslly will go up one. However, if you win your wins tally will go up one
                 </p>
 
         </div>
+        <div id = "wins">
+            <b >wins</b>
+        </div>
+        <div id="losses">
+            <b >losses</b>
+        </div>
+
+        <div id="totalSum">
+            <p></p>
+        </div>
     
         <div>
-        <button id="crystal1">
-                
-                        <ul>Wins</ul>
-                        <ul>loses</ul>
-                    </div>
-    
-                </div>
-    
-    
+                <button id="crystal" value="1">
+                <img src="images/blueCrystal.gif" width=" 50px" height="50px">
                 </button>
             
-                <button id="crystal">
+                <button id="crystal" value="6">
+                    <img src="images/chromeCrystal.gif" width="50px" height="50px">
                 </button>
-                <button id="crystal">
+
+                <button id="crystal" value="2">
+                    <img src="images/purple.gif" width="50px" height="50px">
                 </button>
-                <button id="crystal4">
+
+                <button id="crystal" value="3">
+                    <img src="images/quartsCrystal.gif" width="50px" height="50px">
                 </button>
                 
                 <div class="randomNumber">
                 
                 <!-- div for randonly generated # at start of game-->
+                <b>random number</b>
     
                 
                 </div>
                 
     
         <script>
+
+            document.ready(function(){
             //ARRAY THAT COLLECTS CLICKS ("")
-            //varFOR PLAYER SCORE COUNTER
+            var counter = 0;
+
+            //varFOR PLAYER SCORE COUN
+            
+            var isStarted = false;
             var userScore = 0;
             //VAR FOR LOSS TALLY
+            var losses = 0;
             //VAR FOR WINS TALLY
             //var restart = 0;
+
+
+            if (!isStarted){
     
-           var numArray= 
-           document.getElementsByClassName("randomNumber") = function(){
-            Math.floor(Math.random() * 1);
-    
-            if(numArray===numArray){
-    
-            $(".randomNumber").text(numArray);
-    
+                var numArray= Math.floor(Math.random() * 1);
+        
+           
+                console.log(numArray);
             }
-           }
     
            //FUNCTION THAT COLLECTS USERS CLICKS AND ADDS THEM TO PLAYER SCORE COUNTER
-           
-    
+
+         
+               $(".crystal-image").on("click", function() {
+               result = counter += 10;
+               $("#totalSum").text(result);
+               })
+               
+               
+
     
            //IF THE SCORE GOES ABOVE(.RANDOMNUMBER) ADD +1 TO (LOSS TALLY)
+            if (!score){
+                alert("You Lost!");
+            }
+            else {
+                $("#losses").text(losses++);
+
+            }
+        })
+
     
            
            //GAME RESTARTS WHENEVER THE PLAYER WINS OR LOSES
