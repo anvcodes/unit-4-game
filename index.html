@@ -26,38 +26,50 @@
                 </p>
 
         </div>
+
+        <div class="conatiner-fluid">
+
         <div id = "wins">
             <b >wins</b>
         </div>
+
         <div id="losses">
             <b >losses</b>
         </div>
 
         <div id="totalSum">
-            <p></p>
-        </div>
+                <p>total: </p>
+            </div>
+
+    </div>
+       
     
-        <div>
-                <button id="crystal" value="1">
+        <div >
+                <button class="btn btn-primary" type="button" value="1">
                 <img src="images/blueCrystal.gif" width=" 50px" height="50px">
                 </button>
             
-                <button id="crystal" value="6">
+                <button class="btn btn-primary" type="button" value="6">
                     <img src="images/chromeCrystal.gif" width="50px" height="50px">
                 </button>
 
-                <button id="crystal" value="2">
+                <button class="btn btn-primary" type="button" value="2">
                     <img src="images/purple.gif" width="50px" height="50px">
                 </button>
 
-                <button id="crystal" value="3">
+                <button class="btn btn-primary" type="button" value="3">
                     <img src="images/quartsCrystal.gif" width="50px" height="50px">
                 </button>
+        </div>
                 
-                <div class="randomNumber">
+                <div>
+                    <h2>RANDOM NUMBER</h2>
                 
                 <!-- div for randonly generated # at start of game-->
-                <b>random number</b>
+                
+                <p  class="randomNumber">
+                    
+                </p>
     
                 
                 </div>
@@ -65,11 +77,13 @@
     
         <script>
 
-            document.ready(function(){
+$(document).ready(function() {
+
             //ARRAY THAT COLLECTS CLICKS ("")
-            var counter = 0;
+            var counter ="";
 
             //varFOR PLAYER SCORE COUN
+        
             
             var isStarted = false;
             var userScore = 0;
@@ -81,29 +95,47 @@
 
             if (!isStarted){
     
-                var numArray= Math.floor(Math.random() * 1);
+                var numArray= Math.floor(Math.random() * 100);
         
            
-                console.log(numArray);
+                $(".randomNumber").prepend(numArray);
+
+
             }
     
            //FUNCTION THAT COLLECTS USERS CLICKS AND ADDS THEM TO PLAYER SCORE COUNTER
 
          
-               $(".crystal-image").on("click", function() {
-               result = counter += 10;
-               $("#totalSum").text(result);
+               $(".btn-primary").on("click", function() {
+
+               var result = this.value;
+              console.log(result);
+              counter = counter + this.value;
+
+              $("#totalSum").append(counter);
+
+
+
+
+               
+                
+                
+
+
+
                })
+
+            
                
                
 
     
            //IF THE SCORE GOES ABOVE(.RANDOMNUMBER) ADD +1 TO (LOSS TALLY)
-            if (!score){
+            if (!numArray){
                 alert("You Lost!");
             }
             else {
-                $("#losses").text(losses++);
+                $("#losses").text("losses: " + losses++);
 
             }
         })
