@@ -17,146 +17,75 @@
 <header>Crystal Game</header>
 
 <body>
-        <div class="container">
-                <h1>Instructions</h1>
-                <p>
+
+       <div class="wrapper">
+            <div class="row"> 
+                <div class="container" id="instructions">
+
+                 <h1>Instructions</h1>
+                     <p>
                         The objctive of this game is add the values of the crystals by clicking on them(the values will be hidden) and achieve a sum equal to the random number generated.
                         If your number exceeds the randomly generated number 
                         you lost the game. If you lose your loss tslly will go up one. However, if you win your wins tally will go up one
-                </p>
+                     </p>
 
-        </div>
-
-        <div class="conatiner-fluid">
-
-        <div id = "wins">
-            <b >wins</b>
-        </div>
-
-        <div id="losses">
-            <b >losses</b>
-        </div>
-
-        <div id="totalSum">
-                <p>total: </p>
-            </div>
-
-    </div>
-       
-    
-        <div >
-                <button class="btn btn-primary" type="button" value="1">
-                <img src="images/blueCrystal.gif" width=" 50px" height="50px">
-                </button>
-            
-                <button class="btn btn-primary" type="button" value="6">
-                    <img src="images/chromeCrystal.gif" width="50px" height="50px">
-                </button>
-
-                <button class="btn btn-primary" type="button" value="2">
-                    <img src="images/purple.gif" width="50px" height="50px">
-                </button>
-
-                <button class="btn btn-primary" type="button" value="3">
-                    <img src="images/quartsCrystal.gif" width="50px" height="50px">
-                </button>
-        </div>
-                
-                <div>
-                    <h2>RANDOM NUMBER</h2>
-                
-                <!-- div for randonly generated # at start of game-->
-                
-                <p  class="randomNumber">
-                    
-                </p>
-    
-                
                 </div>
+            </div>
+        </div>
+
+    
+    <div class="wrapper">
+        <div class="row">
+
+                <div class="col-md-4">
+                    <b id = "wins" >wins</b>
+                </div>
+
+                    <div class="col-md-4">
+                     <b id="losses">losses</b>
+                    </div>
+
+                    <div class="col-md-4">
+                     <p id="totalSum" >total: </p>
+                    </div>
+        </div>
+    </div>
+
+    
+    <div class="wrapper">
+            <div class="row">
+
+                <div class="col-sm-3">
+                    <button id="blueCrystal"class="crystal" type="button" value="1">
+                        <img src="images/blueCrystal.gif" width=" 50px" height="50px">
+                    </button>
+                </div>
+                        <div class="col-sm-3">
+                            <button id="chromeCrystal" class="crystal" type="button" value="6">
+                                <img src="images/chromeCrystal.gif" width="50px" height="50px">
+                            </button>
+                        </div>
+                                <div class="col-sm-3">
+                                    <button id="purpleCrystal" class="crystal" type="button" value="2">
+                                        <img src="images/purple.gif" width="50px" height="50px">
+                                    </button>
+                                </div>
+                                        <div class="col-sm-3">
+                                            <button id="quartsCrystal"class="crystal" type="button" value="3">
+                                                <img src="images/quartsCrystal.gif" width="50px" height="50px">
+                                            </button>
+                                        </div>
+            </div>
+    </div>
                 
-    
-        <script>
-
-$(document).ready(function() {
-
-            //ARRAY THAT COLLECTS CLICKS ("")
-            var counter ="";
-
-            //varFOR PLAYER SCORE COUN
-        
-            
-            var isStarted = false;
-            var userScore = 0;
-            //VAR FOR LOSS TALLY
-            var losses = 0;
-            //VAR FOR WINS TALLY
-            //var restart = 0;
-
-
-            if (!isStarted){
-    
-                var numArray= Math.floor(Math.random() * 100);
-        
-           
-                $(".randomNumber").prepend(numArray);
-
-
-            }
-    
-           //FUNCTION THAT COLLECTS USERS CLICKS AND ADDS THEM TO PLAYER SCORE COUNTER
-
-         
-               $(".btn-primary").on("click", function() {
-
-               var result = this.value;
-              console.log(result);
-              counter = counter + this.value;
-
-              $("#totalSum").append(counter);
-
-
-
-
-               
+    <div class="wrapper" >
+        <div class="row">
+                    <h2 id="randomNumber">RANDOM NUMBER</h2>
+                    
+        </div>
                 
+    </div>
                 
-
-
-
-               })
-
-            
-               
-               
-
-    
-           //IF THE SCORE GOES ABOVE(.RANDOMNUMBER) ADD +1 TO (LOSS TALLY)
-            if (!numArray){
-                alert("You Lost!");
-            }
-            else {
-                $("#losses").text("losses: " + losses++);
-
-            }
-        })
-
-    
-           
-           //GAME RESTARTS WHENEVER THE PLAYER WINS OR LOSES
-           // ^IF STATEMENTS^
-           //(IF USERCLICKS IS === TO RANDOMNUMBER)
-            //restart
-           //ELSE IF ( !USER CLICKS(value) ){
-                //define else if
-           //}
-           //another else statement is needed to generate random nubers for when the game restarts
-    
-       
-        
-        
-        
-        
-        
-        </script>
+                <script type="text/javascript" src="assets/javaScript/game.js"> </script>
     </body>
     </html>
